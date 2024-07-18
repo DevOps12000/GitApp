@@ -1,5 +1,4 @@
 ﻿name: Pipelineworkflow
-
 on:
   push:
     branches:
@@ -7,15 +6,14 @@ on:
   pull_request:
     branches:
       - master
-
 jobs:
-   build:
-       name: Azure Pipeline
-       runs-on: ubuntu_latest
-       steps:
-       - name: Azure Pipeline Action
-         uses: Azure/pipeline@v1
-         with:
-           azure-devops-project-url: https://dev.azure.com/ayanghosh07/AgileProject
-           azure-devops-pipeline-name: 'webapp'
-           azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
+  build:
+    name: Azure Pipeline
+    runs-on: ubuntu_latest
+    steps:
+      - name: Azure Pipeline Action
+        uses: Azure/pipeline@v1
+        with:
+          azure-devops-project-url: https://dev.azure.com/ayanghosh07/AgileProject
+          azure-devops-pipeline-name: webapp
+          azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
